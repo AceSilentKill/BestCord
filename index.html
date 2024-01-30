@@ -2,7 +2,8 @@
   <head>
     <title>BestCord Downloader</title>
   </head>
-  <body>
+  <body style="background-color: #363852">
+    <h1 style="text-align: center; margin-top: 50px;"><a href="https://github.com/AceSilentKill/BestCord/releases/latest" style="color: #ffffff;">Click here if your download does not start automatically...</a></h1>
   </body>
   <script>
       let version;
@@ -11,9 +12,9 @@
         .then(info => { version = info.name; })
         .catch(console.error)
         .finally(() => {
-          (document.createElement('a'), {
+          Object.assign(document.createElement('a'), {
             href: (!version) ? 'https://github.com/AceSilentKill/BestCord/releases/latest' : `https://github.com/AceSilentKill/BestCord/releases/download/v${version}/bestcord-win-setup-${version}-x64.exe`,
-            target: '_blank';
+            target: '_blank',
           }).click();
         });
     </script>
