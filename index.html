@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>BestCord Downloader</title>
+  </head>
+  <body>
+  </body>
+  <script>
+      let version;
+      fetch('https://api.github.com/repos/AceSilentKill/BestCord/releases/latest')
+        .then(response => response.json())
+        .then(info => { version = info.name; })
+        .catch(console.error)
+        .finally(() => {
+          (document.createElement('a'), {
+            href: (!version) ? 'https://github.com/AceSilentKill/BestCord/releases/latest' : `https://github.com/AceSilentKill/BestCord/releases/download/v${version}/bestcord-win-setup-${version}-x64.exe`,
+            target: '_blank';
+          }).click();
+        });
+    </script>
+</html>
